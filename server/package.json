@@ -1,0 +1,9 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@emailjs/nodejs": "^4.0.0",
+    "dotenv": "^16.4.5"
+  }
+}
