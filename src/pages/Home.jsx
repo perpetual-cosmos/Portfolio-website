@@ -7,7 +7,7 @@ import PreimumTool from "../components/PremiumTool";
 
 function Home() {
   return (
-    <div className=" text-white text-center md:text-left p-4 md:p-0 lg:mt-28">
+    <div className=" text-white text-center md:text-left p-4 md:p-0 lg:mt-6">
       {/* Home Button Personal Home Heading */}
       <h1 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold">SOFTWARE</h1>
       <h1 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold text-gray-600">
