@@ -50,8 +50,8 @@ const RecentProject = () => {
     
 
     return <>
-        <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold">RECENT</h1>
-        <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold text-gray-600">PROJECTS</h1>
+        <h1 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold">RECENT</h1>
+        <h1 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold text-gray-600">PROJECTS</h1>
         {aboutProject.map((element, index) => (
                 <ProjectCard
                     key={index}

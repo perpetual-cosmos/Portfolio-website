@@ -35,10 +35,10 @@ export default function Contact() {
 
   return (
     <div className="max-w-2xl w-full">
-      <h2 className="text-6xl md:text-7xl lg:text-9xl font-bold text-white">
+      <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold">
         LET'S <span className="text-white">WORK</span>
       </h2>
-      <h2 className="text-6xl md:text-7xl lg:text-9xl font-bold text-gray-600">TOGETHER</h2>
+      <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold text-gray-600">TOGETHER</h2>
 
       <form ref={formRef} onSubmit={sendEmail} className="mt-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

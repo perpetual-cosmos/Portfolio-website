@@ -1,7 +1,7 @@
 const HomeProjectCard = ({ title, bgColor, icon , textcolor,cardwidth}) => {
     return (
-      <div
-        className={`w-${cardwidth} h-60 p-4  rounded-lg flex flex-col justify-between `}
+        <div
+        className={`w-${cardwidth} h-auto p-4 md:h-[15rem] rounded-lg flex flex-col justify-between `}
         style={{ backgroundColor: bgColor, color:textcolor }}
       >
         {/* Icon */}
@@ -13,7 +13,7 @@ const HomeProjectCard = ({ title, bgColor, icon , textcolor,cardwidth}) => {
         {/* Arrow Button */}
         <div className="self-end text-2xl">➡️</div>
       </div>
-    );
+    )
   };
   
   export default HomeProjectCard;

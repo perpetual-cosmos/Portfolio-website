@@ -1,18 +1,17 @@
 import Contact from "../components/Contact";
 import DesignThought from "../components/DesignThought";
-import ExperienceNumber from "../components/ExperienceNumber";
-import HomeProjectCard from "../components/HomeProjectCart";
-import RecentProject from "../components/RecentProject";
-import PreimumTool from "../components/PremiumTool";
+
 function Thought() {
     return (
-        <div className="mx-10 text-white">
-            
-            <DesignThought/>
+        <div className=" text-white text-center md:text-left p-4 md:p-0">
+            {/* Project added in my experience */}
+            <div className="mt-20">
+                <DesignThought />
+            </div>
+            {/* Anyone can contact me */}
             <div className="mt-20">
                 <Contact />
             </div>
-
         </div>
     );
 }

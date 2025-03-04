@@ -24,11 +24,12 @@ const Content = ({ activeSection }) => {
   };
 
   return (
-    <div className="flex justify-center items-center flex-col md:flex-row  md:items-start pt-[5%] gap-8">
-      <Profile />
-      {renderContent()}
+    <div className="grid grid-cols-1 md:grid-cols-[40%_60%]"> 
+        <Profile />
+        <div className="md:h-[90vh] md:overflow-y-auto">
+          {renderContent()}</div>
+        
     </div>
-
   );
 };
 
