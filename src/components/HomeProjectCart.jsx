@@ -17,4 +17,3 @@ const HomeProjectCard = ({ title, bgColor, icon , textcolor,cardwidth}) => {
   };
   
   export default HomeProjectCard;
-  
