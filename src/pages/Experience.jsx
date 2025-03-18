@@ -3,12 +3,15 @@ import DesignThought from "../components/DesignThought";
 
 function Experience() {
     return (
-        <div className="mx-10 lg:mt-6 md:mx-0 md:mr-2 lg:mr-4 text-white">
-            <DesignThought/>
+        <div className=" text-white text-center md:text-left p-4 md:p-0">
+            {/* Project added in my experience */}
+            <div className="md:mt-3 lg:mt-6">
+                <DesignThought />
+            </div>
+            {/* Anyone can contact me */}
             <div className="mt-20">
                 <Contact />
             </div>
-
         </div>
     );
 }

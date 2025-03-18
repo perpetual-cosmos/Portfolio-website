@@ -25,7 +25,9 @@ const Content = (props) => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[40%_60%]"> 
+        <div className={props.activeSection === "home" ? "block" : "hidden md:block"}>
         <Profile />
+      </div>
         <div className="md:h-[90vh] md:overflow-y-auto">
           {renderContent()}</div>
         

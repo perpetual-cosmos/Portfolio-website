@@ -1,4 +1,4 @@
-const DesignCard = ({ title, description, startDate, endDate, Url }) => {
+const ThoughtCard = ({ title, description, Url }) => {
     return (
         <div className="mt-10 hover:bg-[#1a1a1a] text-white  rounded-lg  w-auto">
             {/* Title */}
@@ -7,10 +7,6 @@ const DesignCard = ({ title, description, startDate, endDate, Url }) => {
             {/* Description */}
             <p className="mt-3 text-md sm:text-xl text-gray-400 ">{description}</p>
 
-            {/* Date */}
-            <p className="text-gray-500 mt-4">
-                {startDate} - {endDate}
-            </p>
             <a href={Url} className="text-orange-400 hover:text-orange-500 text-xl ml-auto">
           ↗
         </a>
@@ -18,4 +14,4 @@ const DesignCard = ({ title, description, startDate, endDate, Url }) => {
     );
 };
 
-export default DesignCard;
+export default ThoughtCard;
