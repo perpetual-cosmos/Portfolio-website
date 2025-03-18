@@ -1,9 +1,9 @@
 import Contact from "../components/Contact";
-import DesignThought from "../components/DesignThought";
 import ExperienceNumber from "../components/ExperienceNumber";
 import HomeProjectCard from "../components/HomeProjectCart";
 import RecentProject from "../components/RecentProject";
 import PreimumTool from "../components/PremiumTool";
+import ExperienceComponent from "../components/ExperienceComponent";
 
 function Home({ setActiveSection }) {
   return (
@@ -56,7 +56,7 @@ function Home({ setActiveSection }) {
       </div>
       {/* Project added in my experience */}
       <div className="mt-20">
-        <DesignThought />
+        <ExperienceComponent />
       </div>
       {/* Anyone can contact me */}
       <div className="mt-20">
