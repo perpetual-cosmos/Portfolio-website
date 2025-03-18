@@ -24,14 +24,14 @@ function Home() {
       <div className="flex flex-col sm:flex-row gap-10 mt-20 sm:mx-10">
         {/* Dynamic Animation Card */}
         <HomeProjectCard
-          title="DYNAMIC ANIMATION, MOTION DESIGN"
+          title="REACTJS NEXT.JS REDUX TAILWIND CSS"
           bgColor="#FF5722"
           icon="📦"
           textcolor="white"
           cardwidth="30%"
         />
         <HomeProjectCard
-          title="FRAMER, FIGMA, WORDPRESS, REACTJS"
+          title="NODE.JS EXPRESS MONGODB FIREBASE API"
           bgColor="#CCFF00"
           icon="📁"
           textcolor="black"
