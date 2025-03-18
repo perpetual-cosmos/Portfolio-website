@@ -5,7 +5,7 @@ import HomeProjectCard from "../components/HomeProjectCart";
 import RecentProject from "../components/RecentProject";
 import PreimumTool from "../components/PremiumTool";
 
-function Home() {
+function Home({ setActiveSection }) {
   return (
     <div className=" text-white text-center md:text-left p-4 md:p-0 lg:mt-6">
       {/* Home Button Personal Home Heading */}
@@ -40,11 +40,12 @@ function Home() {
       </div>
       {/* Recent Project Completed Recently */}
       <div className="mt-20 text-white">
-        <RecentProject limit={4}/>
-        <button 
+        <RecentProject limit={4} />
+        <button
           onClick={() => setActiveSection('projects')}
-          className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg
-                     transition-all duration-300 transform hover:scale-105"
+          className="mt-8 bg-transparent hover:bg-white/10 font-bold py-3 px-8 rounded-lg
+            transition-all duration-300 transform hover:scale-105
+            text-[rgb(249,115,22)] border border-orange-500/20"
         >
           View All Projects →
         </button>

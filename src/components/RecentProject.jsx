@@ -50,8 +50,6 @@ const RecentProject = ({limit}) => {
 
     const displayedProjects = aboutProject.slice(0, limit);
     
-    console.log(limit);
-    
 
     return <>
         <h1 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold">RECENT</h1>

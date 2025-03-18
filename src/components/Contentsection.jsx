@@ -5,11 +5,11 @@ import Experience from "../pages/Experience";
 import Thought from "../pages/Thoughts";
 import Tools from "../pages/Tools";
 
-const Content = ({ activeSection }) => {
+const Content = (props) => {
   const renderContent = () => {
-    switch (activeSection) {
+    switch (props.activeSection) {
       case "home":
-        return <Home />;
+        return <Home setActiveSection={props.setActiveSection}/>;
       case "projects":
         return <Project />;
       case "experience":

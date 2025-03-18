@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <Navbar setActiveSection={setActiveSection} />
-      <Content activeSection={activeSection} />
+      <Content activeSection={activeSection} setActiveSection={setActiveSection}/>
       <Footer/>
     </div>
   );
