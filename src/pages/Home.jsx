@@ -40,7 +40,14 @@ function Home() {
       </div>
       {/* Recent Project Completed Recently */}
       <div className="mt-20 text-white">
-        <RecentProject />
+        <RecentProject limit={4}/>
+        <button 
+          onClick={() => setActiveSection('projects')}
+          className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg
+                     transition-all duration-300 transform hover:scale-105"
+        >
+          View All Projects →
+        </button>
       </div>
       {/* Tools I am Familiar with */}
       <div className="mt-20">
