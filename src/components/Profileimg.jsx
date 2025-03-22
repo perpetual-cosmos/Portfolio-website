@@ -7,7 +7,7 @@ const Profile = () => {
         <div className="bg-white items-center m-4 text-center rounded-2xl p-6 md:p-2  w-[90%] md:w-[60%] lg:w-[50%] xl:w-[40%] lg:mt-10 h-fit  md:flex md:flex-col md:translate-x-10 lg:translate-x-40 xl:translate-x-60">
             {/* Profile Image */}
             <img
-                src="/tarun photo freelancer.png"
+                src="/tarun photo freelancer.jpg"
                 alt="profile image"
                 className="rounded-[50px] px-6 py-4 md:px-2 2xl:px-8"
             />
