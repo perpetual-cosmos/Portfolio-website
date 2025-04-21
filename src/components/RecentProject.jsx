@@ -40,7 +40,7 @@ const aboutProject = [
     },
     {
         img: "/dicegame.jpg",
-        url: "https://dice-game-frontend-two.vercel.app/game",
+        url: "https://dice-game-frontend-two.vercel.app",
         title: "Two-Dice Game App",
         description: "Developed a fun and interactive two-dice game using JavaScript and React. Features multiplayer support, randomized dice rolls, and an engaging UI for an immersive gaming experience."
     }
