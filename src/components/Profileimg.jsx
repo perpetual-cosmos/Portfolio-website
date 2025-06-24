@@ -1,5 +1,6 @@
-import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Profile = () => {
     return (
@@ -19,11 +20,12 @@ const Profile = () => {
             <p className="sm:text-2xl md:text-sm mt-6 2xl:text-4xl">
                 A Software Engineer who has developed countless innovative solutions.
             </p>
-            <div className="flex justify-center gap-4 mt-4">
-                <a href="https://www.instagram.com/" className="text-[#f97316] hover:text-black text-2xl 2xl:text-4xl"><FaInstagram /></a>
-                <a href="https://github.com/" className="text-[#f97316] hover:text-black text-2xl 2xl:text-4xl"><FaGithub /></a>
-                <a href="https://mail.google.com/" className="text-[#f97316] hover:text-black text-2xl 2xl:text-4xl"><SiGmail /></a>
-                <a href="https://www.linkedin.com/" className="text-[#f97316] hover:text-black text-2xl 2xl:text-4xl"><FaLinkedin /></a>
+            <div className="flex justify-center gap-3 mt-4">
+                <a href="https://x.com/perpetualCosmo_" className="text-[#f97316] hover:text-black text-2xl 2xl:text-4xl" target="_blank"><FaXTwitter /></a>
+                <a href="https://github.com/perpetual-cosmos" className="text-[#f97316] hover:text-black text-2xl 2xl:text-4xl" target="_blank"><FaGithub /></a>
+                <a href="https://www.linkedin.com/in/tarunsingh241/" className="text-[#f97316] hover:text-black text-2xl 2xl:text-4xl" target="_blank"><FaLinkedin /></a>
+                <a href="https://www.instagram.com/perpetualcosmos_/" className="text-[#f97316] hover:text-black text-2xl 2xl:text-4xl" target="_blank"><FaInstagram /></a>
+                <a href="mailto:prataptarunsingh241@gmail.com" className="text-[#f97316] hover:text-black text-2xl 2xl:text-4xl" target="_blank"><SiGmail /></a>
             </div>
         </div>
         </div>
