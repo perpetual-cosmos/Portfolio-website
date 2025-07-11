@@ -16,25 +16,25 @@ const aboutProject = [
     },
     {
         img: "/chatbot.jpg",
-        url: "https://www.ujmrid.com",
+        url: "https://github.com/perpetual-cosmos",
         title: "AI-Powered Customer Support Chatbot",
         description: "Engineered an AI chatbot using OpenAI’s GPT model, improving response accuracy by 80%. Integrated it with a React.js frontend and a Node.js backend, ensuring seamless real-time interactions."
     },
     {
         img: "/ecommerce.jpg",
-        url: "https://www.ujmrid.com",
+        url: "https://ecommerce-frontend-five-sand.vercel.app/",
         title: "Full-Stack E-Commerce Platform",
         description: "Designed a MERN-based e-commerce platform with Stripe payment integration. Built an admin dashboard for inventory management and analytics, optimizing queries to reduce load time by 40%."
     },
     {
         img: "/chatbot.jpg",
-        url: "https://www.ujmrid.com",
+        url: "https://github.com/perpetual-cosmos",
         title: "Real-Time Chat Application",
         description: "Developed a real-time chat application using WebSockets and MongoDB. Implemented JWT authentication for secure user sessions and deployed on AWS with auto-scaling for high traffic handling."
     },
     {
         img: "/pythonattandence.jpg",
-        url: "https://www.ujmrid.com",
+        url: "https://github.com/perpetual-cosmos",
         title: "Face Recognition-Based Attendance System",
         description: "Built an AI-powered face recognition system for automated attendance tracking. Integrated OpenCV and Python with a React.js dashboard, reducing manual attendance errors by 90%."
     },
