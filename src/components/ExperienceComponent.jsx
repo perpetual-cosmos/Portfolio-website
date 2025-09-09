@@ -1,8 +1,15 @@
 import DesignCard from "./DesignCard"
 const ExperienceComponent = () => {
     return <div className="text-white">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold">3 YEARS OF</h1>
+        <h1 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold">1 YEARS OF</h1>
         <h1 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold text-gray-600">EXPERIENCE</h1>
+         <DesignCard
+            title="OnlyDust (Open-source Contibutions (32+ Prs))"
+            description="AquaStark/AqaStark:Smart contact: Targeted fish trade offer (Pr #210). Harmonia-development : Referral Contract Implementation."
+            startDate="Dec 2024"
+            endDate="Present"
+            Url="#"
+        />
          <DesignCard
             title="Blockchain Enthusiast | Smart Contracts & Web3 Basics"
             description="Explored blockchain development by building decentralized applications and smart contracts. Worked on Ethereum-based voting systems and Web3 integrations, ensuring security and transparency in transactions."
@@ -23,7 +30,7 @@ const ExperienceComponent = () => {
             startDate="Jan 2022"
             endDate="Present"
             Url="#"
-        />
+        />    
     </div>
 
 }
