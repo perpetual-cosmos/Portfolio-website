@@ -1,5 +1,5 @@
 import "dotenv/config";
-import * as emailjs from "@emailjs/nodejs";
+import { init, send } from "@emailjs/nodejs";
 
 export const handler = async (event, context) => {
   // Only allow POST requests
@@ -21,7 +21,10 @@ export const handler = async (event, context) => {
   }
 
   try {
-    const result = await emailjs.send(
+    // Initialize EmailJS with your public key
+    init(process.env.EMAILJS_PUBLIC_KEY);
+
+    const result = await send(
       process.env.EMAILJS_SERVICE_ID,
       process.env.EMAILJS_TEMPLATE_ID,
       {
@@ -30,10 +33,7 @@ export const handler = async (event, context) => {
         user_budget,
         message,
       },
-      {
-        publicKey: process.env.EMAILJS_PUBLIC_KEY,
-        privateKey: process.env.EMAILJS_PRIVATE_KEY,
-      }
+      process.env.EMAILJS_PRIVATE_KEY // Pass private key as third parameter
     );
 
     return {

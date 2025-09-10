@@ -12,23 +12,24 @@ export default function Contact() {
     const data = Object.fromEntries(formData);
 
     try {
-      const response = await fetch("/.netlify/functions/send-email", {
+      const response = await fetch("/netlify/functions/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        formRef.current.reset();
-      } else {
-        setStatus(result.message || "Failed to send message.");
+      if (!response.ok) {
+        const text = await response.text();
+        console.error("Server returned non-200:", text);
+        setStatus("Failed to send message. Server error.");
+        return;
       }
+
+      const result = await response.json();
+      setStatus(result.message || "Message sent successfully!");
+      formRef.current.reset();
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Fetch error:", error);
       setStatus("Failed to send message. Please try again.");
     }
   };
@@ -70,6 +71,7 @@ export default function Contact() {
           className="w-full px-4 py-2 mt-1 bg-transparent border border-gray-600 text-white rounded-lg focus:outline-none focus:border-orange-500"
         >
           <option className="bg-black text-white">Select...</option>
+          <option className="bg-black text-whtie">Free consult</option>
           <option className="bg-black text-white">$6 - $57</option>
           <option className="bg-black text-white">$57 - $114</option>
           <option className="bg-black text-white">$114+</option>

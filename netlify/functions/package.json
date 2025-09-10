@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "@emailjs/nodejs": "^4.0.0",
+    "@emailjs/nodejs": "^5.0.2",
     "dotenv": "^16.4.5"
   }
 }
