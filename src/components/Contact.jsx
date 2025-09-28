@@ -1,17 +1,24 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import useEmailSender from "../hooks/useEmailSender";
 
 export default function Contact() {
   const formRef = useRef();
   const { sendForm, loading, success, error } = useEmailSender();
+  const [status, setStatus] = useState("");
 
-  const handleSubmit = async (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+    if (loading) return; // prevent double clicks
+
+    setStatus("Sending...");
+
     try {
       await sendForm(formRef.current);
+      setStatus("Message sent successfully!");
       formRef.current.reset();
     } catch (err) {
-      console.error("Failed to send email", err);
+      console.error("Email send failed:", err);
+      setStatus("Failed to send message. Please try again.");
     }
   };
 
@@ -20,9 +27,11 @@ export default function Contact() {
       <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold">
         LET'S <span className="text-white">WORK</span>
       </h2>
-      <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold text-gray-600">TOGETHER</h2>
+      <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold text-gray-600">
+        TOGETHER
+      </h2>
 
-      <form ref={formRef} onSubmit={handleSubmit} className="mt-6">
+      <form ref={formRef} onSubmit={sendEmail} className="mt-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-gray-400">Name</label>
@@ -68,15 +77,18 @@ export default function Contact() {
 
         <button
           type="submit"
-          disabled={loading}
-          className="w-full mt-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition"
+          disabled={loading} // ✅ disable while sending
+          className={`w-full mt-6 py-3 font-bold rounded-lg transition ${
+            loading
+              ? "bg-gray-500 text-gray-300 cursor-not-allowed"
+              : "bg-orange-500 text-white hover:bg-orange-600"
+          }`}
         >
           {loading ? "Sending..." : "Submit"}
         </button>
       </form>
 
-      {success && <p className="text-green-400 text-center mt-4">Message sent successfully!</p>}
-      {error && <p className="text-red-400 text-center mt-4">Failed to send message. Try again.</p>}
+      {status && <p className="text-white text-center mt-4">{status}</p>}
     </div>
   );
 }
