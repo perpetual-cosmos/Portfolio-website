@@ -1,36 +1,17 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import useEmailSender from "../hooks/useEmailSender";
 
 export default function Contact() {
   const formRef = useRef();
-  const [status, setStatus] = useState("");
+  const { sendForm, loading, success, error } = useEmailSender();
 
-  const sendEmail = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-
-    const formData = new FormData(formRef.current);
-    const data = Object.fromEntries(formData);
-
     try {
-      const response = await fetch("/netlify/functions/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        const text = await response.text();
-        console.error("Server returned non-200:", text);
-        setStatus("Failed to send message. Server error.");
-        return;
-      }
-
-      const result = await response.json();
-      setStatus(result.message || "Message sent successfully!");
+      await sendForm(formRef.current);
       formRef.current.reset();
-    } catch (error) {
-      console.error("Fetch error:", error);
-      setStatus("Failed to send message. Please try again.");
+    } catch (err) {
+      console.error("Failed to send email", err);
     }
   };
 
@@ -41,7 +22,7 @@ export default function Contact() {
       </h2>
       <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold text-gray-600">TOGETHER</h2>
 
-      <form ref={formRef} onSubmit={sendEmail} className="mt-6">
+      <form ref={formRef} onSubmit={handleSubmit} className="mt-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-gray-400">Name</label>
@@ -71,7 +52,7 @@ export default function Contact() {
           className="w-full px-4 py-2 mt-1 bg-transparent border border-gray-600 text-white rounded-lg focus:outline-none focus:border-orange-500"
         >
           <option className="bg-black text-white">Select...</option>
-          <option className="bg-black text-whtie">Free consult</option>
+          <option className="bg-black text-white">Free consult</option>
           <option className="bg-black text-white">$6 - $57</option>
           <option className="bg-black text-white">$57 - $114</option>
           <option className="bg-black text-white">$114+</option>
@@ -87,13 +68,15 @@ export default function Contact() {
 
         <button
           type="submit"
+          disabled={loading}
           className="w-full mt-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition"
         >
-          Submit
+          {loading ? "Sending..." : "Submit"}
         </button>
       </form>
 
-      {status && <p className="text-white text-center mt-4">{status}</p>}
+      {success && <p className="text-green-400 text-center mt-4">Message sent successfully!</p>}
+      {error && <p className="text-red-400 text-center mt-4">Failed to send message. Try again.</p>}
     </div>
   );
 }
