@@ -90,5 +90,6 @@ export default function Contact() {
 
       {status && <p className="text-white text-center mt-4">{status}</p>}
     </div>
+    
   );
 }
