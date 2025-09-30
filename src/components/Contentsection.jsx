@@ -28,7 +28,7 @@ const Content = (props) => {
         <div className={`${props.activeSection === "home" ? "block" : "hidden md:block"} md:h-[78vh]`}>
         <Profile />
       </div>
-        <div className="md:h-[78vh] md:overflow-y-auto">
+        <div className="md:h-[78vh] md:overflow-y-auto scrollbar-hide">
           {renderContent()}</div>
         
     </div>
