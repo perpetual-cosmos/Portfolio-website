@@ -23,7 +23,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="max-w-2xl w-full">
+    <div className="max-w-2xl w-full pb-6">
       <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl font-bold">
         LET'S <span className="text-white">WORK</span>
       </h2>
